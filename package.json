@@ -1,0 +1,24 @@
+{
+  "name": "payment-task",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Full-stack payment application monorepo",
+  "scripts": {
+    "dev": "pnpm --filter @payment/api dev --filter @payment/web dev",
+    "build": "pnpm --filter @payment/shared-types build && pnpm --filter @payment/api build && pnpm --filter @payment/web build",
+    "lint": "pnpm --filter @payment/api lint && pnpm --filter @payment/web lint && pnpm --filter @payment/shared-types lint",
+    "typecheck": "pnpm --filter @payment/api typecheck && pnpm --filter @payment/web typecheck && pnpm --filter @payment/shared-types typecheck",
+    "db:generate": "pnpm --filter @payment/api db:generate",
+    "db:migrate": "pnpm --filter @payment/api db:migrate",
+    "db:studio": "pnpm --filter @payment/api db:studio",
+    "db:push": "pnpm --filter @payment/api db:push"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.0"
+  },
+  "engines": {
+    "node": ">=20.0.0",
+    "pnpm": ">=9.0.0"
+  },
+  "packageManager": "pnpm@9.0.0"
+}
